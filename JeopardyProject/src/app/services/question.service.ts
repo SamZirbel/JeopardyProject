@@ -14,7 +14,7 @@ export class QuestionService {
   
     getQuestion():Observable<Question>{
   
-      return this.http.get("https://jservice.io/") as Observable<Question>; 
+      return this.http.get("https://jservice.io/random") as Observable<Question>; 
 
   }
 
