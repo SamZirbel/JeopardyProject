@@ -1,0 +1,62 @@
+<div class="container-fluid">
+
+
+  <div class="row">
+  
+    <button class="btn btn-primary col-sm-4" (click)="getQuestionForDisplay()"
+      style="background-color: azure;
+            padding: 5px 10px;
+            font-size: 25px;"
+    >Get a question</button>
+    <button class="btn" (click)="testAnswer()" 
+      style="background-color: azure;
+            padding: 5px 10px;
+            margin-left: 1%;
+            font-size:25px;
+            margin-bottom: 2%;"
+    >Check your answer</button>
+  </div>
+
+
+  <table class="table" *ngIf = "question" style="margin-bottom: 15px">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Question</th>
+        <th scope="col">Value</th>
+        <th scope="col" [hidden]="answerStatus">Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border-right: solid;
+          border-width: 3px;
+          padding : 3px;
+        "
+        >{{question.category.title}}</td>
+        <td>{{question.question}}</td>
+        <td>{{question.value}}</td>
+        <td [hidden]="visibility">{{question.answer}}</td>
+      
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <label class="col-sm-4" for="answerInput">Enter your answer:</label>
+    <input class="col-sm-4" id="answerInput" name="answerInput" type="text" [(ngModel)]="answer">
+    
+
+    <div *ngIf = "result" style="margin-top: 30px; margin-bottom: 30px; font-size: 30px;"
+    [hidden]="answerStatus"
+    >
+      Your answer was: 
+      {{result}}
+    </div>
+
+    <div *ngIf = "score" style="margin-top: 10px;">
+      Score :
+      {{this.score}}
+    </div>
+  
+</div>
+
