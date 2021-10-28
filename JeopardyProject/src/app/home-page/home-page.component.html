@@ -4,7 +4,7 @@
   <div class="row">
   
     <button class="btn btn-primary col-sm-4" (click)="getQuestionForDisplay()">Get a question</button>
-    <button class="btn" (click)="testAnswer()">Check your answer</button>
+    <button class="btn" (click)="testAnswer()" >Check your answer</button>
   </div>
 
 
@@ -22,7 +22,7 @@
         <td>{{question.category.title}}</td>
         <td>{{question.question}}</td>
         <td>{{question.value}}</td>
-        <td [hidden]>{{question.answer}}</td>
+        <td [hidden]="visibility">{{question.answer}}</td>
       
         <td></td>
       </tr>

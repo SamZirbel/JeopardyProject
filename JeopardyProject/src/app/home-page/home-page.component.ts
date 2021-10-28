@@ -13,6 +13,8 @@ export class HomePageComponent implements OnInit {
   public answer:string = '';
   public result:any = null;
 
+  public visibility:boolean = true;
+
   constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class HomePageComponent implements OnInit {
     this.questionService.getQuestion().subscribe(
       (data: Question[]) => {
         this.question = data[0];
-
+        this.visibility = true;
       },
       (error) => {
         this.question = null;
@@ -35,9 +37,11 @@ export class HomePageComponent implements OnInit {
   testAnswer(): any{
     
     if (this.question?.answer == this.answer) {
-      console.log("true"); this.result = "correct" ; 
+      console.log("true"); this.result = "correct" ;
+      this.visibility = false;
     } else {
       console.log("false"); this.result = "incorrect";
+      this.visibility = false;
     }
   }
 
