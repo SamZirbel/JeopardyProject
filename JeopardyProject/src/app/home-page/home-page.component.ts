@@ -29,4 +29,6 @@ export class HomePageComponent implements OnInit {
 
   }
 
+  getAnswerForDisplay()
+
 }
