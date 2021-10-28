@@ -12,6 +12,7 @@ export class HomePageComponent implements OnInit {
   public question: (Question | null) = null;
   public answer:string = '';
   public result:any = null;
+  public score:any = 0;
 
   public visibility:boolean = true;
 
@@ -26,6 +27,7 @@ export class HomePageComponent implements OnInit {
       (data: Question[]) => {
         this.question = data[0];
         this.visibility = true;
+        console.log(this.question.answer);
       },
       (error) => {
         this.question = null;
@@ -39,9 +41,14 @@ export class HomePageComponent implements OnInit {
     if (this.question?.answer == this.answer) {
       console.log("true"); this.result = "correct" ;
       this.visibility = false;
+      this.score += this.question.value;
     } else {
       console.log("false"); this.result = "incorrect";
       this.visibility = false;
+
+      this.score = this.score;
+      console.log(this.score);
+
     }
   }
 

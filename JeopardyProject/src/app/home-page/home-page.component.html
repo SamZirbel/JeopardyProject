@@ -30,9 +30,16 @@
   </table>
   <label class="col-sm-4" for="answerInput">Enter your answer:</label>
     <input class="col-sm-4" id="answerInput" name="answerInput" type="text" [(ngModel)]="answer">
-    <div *ngIf = "result">
+    
+
+    <div *ngIf = "result" style="margin-top: 30px; margin-bottom: 30px;">
       Your answer was: 
       {{result}}
+    </div>
+
+    <div *ngIf = "score">
+      Score :
+      {{this.score}}
     </div>
   
 </div>
