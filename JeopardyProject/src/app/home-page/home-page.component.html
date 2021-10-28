@@ -1,8 +1,12 @@
-div class="container-fluid">
+<div class="container-fluid">
+
+
   <div class="row">
   
-    <button class="btn btn-primary col-sm-4" (click)="getQuestion()">Get a question</button>
+    <button class="btn btn-primary col-sm-4" (click)="getQuestionForDisplay()">Get a question</button>
   </div>
+
+
   <table class="table" *ngIf="question">
     <thead>
       <tr>
@@ -14,14 +18,12 @@ div class="container-fluid">
     <tbody>
       <tr>
         <td>{{question?.question}}</td>
-        <td>{{question?.value}}
-          <td>{{question?.answer}}</td>
-        </td>
-        <td>
-         
-        </td>
+        <td>{{question?.value}}</td>
+        <td>{{question?.answer}}</td>
       </tr>
     </tbody>
   </table>
+
+
 </div>
 
