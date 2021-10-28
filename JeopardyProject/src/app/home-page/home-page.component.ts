@@ -9,9 +9,10 @@ import { QuestionService } from '../services/question.service';
 })
 export class HomePageComponent implements OnInit {
 
-  public question:(Question | null) = null;
+  public question: (Question | null) = null;
+  public answer:string = '';
 
-  constructor(private questionService:QuestionService) { }
+  constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
   }
@@ -19,16 +20,24 @@ export class HomePageComponent implements OnInit {
   getQuestionForDisplay() {
 
     this.questionService.getQuestion().subscribe(
-      (data:Question[]) => { this.question = data[0];
-        
-            },
+      (data: Question[]) => {
+        this.question = data[0];
+
+      },
       (error) => {
-      this.question = null;
+        this.question = null;
       }
     )
 
   }
 
-  getAnswerForDisplay()
+  testAnswer(): any{
+    
+    if (this.question?.answer == this.answer) {
+      console.log("true"); return true ; 
+    } else {
+      console.log("false"); return false;
+    }
+  }
 
 }

@@ -4,7 +4,7 @@
   <div class="row">
   
     <button class="btn btn-primary col-sm-4" (click)="getQuestionForDisplay()">Get a question</button>
-    <button class="btn" (click)="testAnswer(answer:string)">Check your answer</button>
+    <button class="btn" (click)="testAnswer()">Check your answer</button>
   </div>
 
 
@@ -27,7 +27,7 @@
     </tbody>
   </table>
   <label class="col-sm-4" for="answerInput">Enter your answer:</label>
-    <input class="col-sm-4" id="answerInput" name="answerInput" type="string" >
-  <label for = "answerInput">Enter your answer</label>
+    <input class="col-sm-4" id="answerInput" name="answerInput" type="text" [(ngModel)]="answer">
+  
 </div>
 
