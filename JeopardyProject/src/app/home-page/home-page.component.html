@@ -1,1 +1,27 @@
-<p>home-page works!</p>
+div class="container-fluid">
+  <div class="row">
+  
+    <button class="btn btn-primary col-sm-4" (click)="getQuestion()">Get a question</button>
+  </div>
+  <table class="table" *ngIf="question">
+    <thead>
+      <tr>
+        <th scope="col">Question</th>
+        <th scope="col">Value</th>
+        <th scope="col">Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{question?.question}}</td>
+        <td>{{question?.value}}
+          <td>{{question?.answer}}</td>
+        </td>
+        <td>
+         
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
