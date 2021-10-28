@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
   public score:any = 0;
 
   public visibility:boolean = true;
+  public answerStatus:boolean = true;
 
   constructor(private questionService: QuestionService) { }
 
@@ -27,6 +28,7 @@ export class HomePageComponent implements OnInit {
       (data: Question[]) => {
         this.question = data[0];
         this.visibility = true;
+        this.answerStatus = true;
         console.log(this.question.answer);
       },
       (error) => {
@@ -42,9 +44,12 @@ export class HomePageComponent implements OnInit {
       console.log("true"); this.result = "correct" ;
       this.visibility = false;
       this.score += this.question.value;
+      this.answerStatus = false;
     } else {
       console.log("false"); this.result = "incorrect";
       this.visibility = false;
+
+      this.answerStatus = false;
 
       this.score = this.score;
       console.log(this.score);
