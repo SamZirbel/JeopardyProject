@@ -12,9 +12,9 @@ export class QuestionService {
 
     constructor(private http:HttpClient) { }
   
-    getQuestion():Observable<Question>{
+    getQuestion():Observable<Question[]>{
   
-      return this.http.get("https://jservice.io/api/random") as Observable<Question>; 
+      return this.http.get("https://jservice.io/api/random") as Observable<Question[]>; 
 
   }
 

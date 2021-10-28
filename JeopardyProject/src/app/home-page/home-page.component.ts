@@ -19,7 +19,9 @@ export class HomePageComponent implements OnInit {
   getQuestionForDisplay() {
 
     this.questionService.getQuestion().subscribe(
-      (data:Question) => { this.question = data; },
+      (data:Question[]) => { this.question = data[0];
+        
+            },
       (error) => {
       this.question = null;
       }
