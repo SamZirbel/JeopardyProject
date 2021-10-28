@@ -8,11 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuestionService {
 
-  constructor(private http:HttpClient) { }
+  
 
-  getQuestion():Observable<Question> {
-
-    return this.http.get("https://jservice.io/api/random") as Observable<Question>
+    constructor(private http:HttpClient) { }
+  
+    getQuestion():Observable<Question>{
+  
+      return this.http.get("https://jservice.io/") as Observable<Question>; 
 
   }
 
