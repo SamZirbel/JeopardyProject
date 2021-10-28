@@ -11,6 +11,7 @@ export class HomePageComponent implements OnInit {
 
   public question: (Question | null) = null;
   public answer:string = '';
+  public result:any = null;
 
   constructor(private questionService: QuestionService) { }
 
@@ -34,9 +35,9 @@ export class HomePageComponent implements OnInit {
   testAnswer(): any{
     
     if (this.question?.answer == this.answer) {
-      console.log("true"); return true ; 
+      console.log("true"); this.result = "correct" ; 
     } else {
-      console.log("false"); return false;
+      console.log("false"); this.result = "incorrect";
     }
   }
 
